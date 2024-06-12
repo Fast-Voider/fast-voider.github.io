@@ -79,31 +79,5 @@
             <a href="https://discord.gg/tCSWvnpd9d">https://discord.gg/tCSWvnpd9d</a>
         </div>
     </div>
-
-    <video id="fullscreen-video" style="display:none;" autoplay loop controls>
-        <source src="https://only-fans.uk/images/video1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <script>
-        var fullscreenVideo = document.getElementById("fullscreen-video");
-        document.body.addEventListener('click', function(event) {
-            var x = event.clientX;
-            var y = event.clientY;
-            var screenWidth = window.innerWidth;
-            var screenHeight = window.innerHeight;
-            if (x > screenWidth * 0.75 && y > screenHeight * 0.75) {
-                if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
-                    document.exitFullscreen = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
-                    document.exitFullscreen();
-                    fullscreenVideo.style.display = 'none';
-                } else {
-                    fullscreenVideo.style.display = 'block';
-                    fullscreenVideo.requestFullscreen = fullscreenVideo.requestFullscreen || fullscreenVideo.webkitRequestFullscreen || fullscreenVideo.mozRequestFullScreen || fullscreenVideo.msRequestFullscreen;
-                    fullscreenVideo.requestFullscreen();
-                }
-            }
-        });
-    </script>
 </body>
 </html>

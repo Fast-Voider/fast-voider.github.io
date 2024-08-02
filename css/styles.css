@@ -324,7 +324,6 @@ body {
     border-radius: 20px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
     margin: 0;
@@ -415,10 +414,11 @@ body {
 }
 
 .bio a {
-    color: blue;
+    color: rgba(0,168,252,255);
     text-decoration: none;
 }
 
 .bio a:hover {
     text-decoration: underline;
 }
+

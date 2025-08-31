@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #discontinued-projects {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        #discontinued-projects p {
+            margin: 6px 0;
+        }
+
+        .avatar {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body style="margin: 0; background-color: #000000;">
     <canvas id="background-canvas"></canvas>
@@ -13,17 +38,21 @@
             <div class="left-content">
                 <div class="rectangle">
                     <div class="content">
-                        <a href="" target="_blank" class="outline">
-                            <img class="avatar" src="media/profile.png" alt="Avatar">
-                        </a>
+                        <img class="avatar" src="media/profile.png" alt="Avatar" id="profile-pic">
+                        
                         <h1 class="nickname">Syphic</h1>
                         <div class="bio">
                             <p>Developer</p>
-                            <p>C#, JS, PY</p>
-                            <p>🎯 𝐄𝐱-𝐎𝐰𝐧𝐞𝐫 of <a href="https://trueshot.cc/" target="_blank">TrueShot</a></p>
-                            <p>🔥 𝐄𝐱-𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 of <a href="https://discord.gg/yWbsH2yqhH" target="_blank">UnfairHub</a></p>
-                            <p>📊 𝐄𝐱-𝐌𝐚𝐧𝐚𝐠𝐞𝐫 at <a href="https://discord.gg/getfeather" target="_blank">Feather</a></p>
+                            <p>C#, C++, LuaU</p>
+                            <p>🔥 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 of <a href="https://discord.gg/8rBSqMeZ8y" target="_blank">Misery.cc</a></p>
                         </div>
+
+                        <div id="discontinued-projects">
+                            <p>🎯 𝐄𝐱-𝐎𝐰𝐧𝐞𝐫 of TrueShot (DISCONTINUED)</p>
+                            <p>🔥 𝐄𝐱-𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 of UnfairHub (DISCONTINUED)</p>
+                            <p>📊 𝐄𝐱-𝐌𝐚𝐧𝐚𝐠𝐞𝐫 at Feather (DISCONTINUED)</p>
+                        </div>
+
                         <div class="social-links social-links-rectangle">
                             <a href="https://github.com/Fast-Voider" target="_blank">
                                 <img src="icons/hub.svg" alt="Github">
@@ -41,6 +70,17 @@
         </div>
     </div>
     <script>
+        const profilePic = document.getElementById('profile-pic');
+        const discontinuedProjects = document.getElementById('discontinued-projects');
+
+        profilePic.addEventListener('click', () => {
+            if (discontinuedProjects.style.display === "none" || discontinuedProjects.style.display === "") {
+                discontinuedProjects.style.display = "block";
+            } else {
+                discontinuedProjects.style.display = "none";
+            }
+        });
+
         const canvas = document.getElementById('background-canvas');
         canvas.style.position = 'fixed';
         canvas.style.top = '0';
